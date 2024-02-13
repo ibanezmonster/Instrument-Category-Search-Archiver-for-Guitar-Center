@@ -1,0 +1,132 @@
+body{
+    background-color:black;
+    color: white;
+}
+
+h2.welcome-message {
+    color: black;
+    margin-left: 20px;
+}
+
+h4 {
+	text-align: center;
+}
+
+strong {
+	font-weight: 700;
+	background-color: yellow;
+}
+
+p {
+	font-family: sans-serif;
+}
+
+p#request-notification {
+    color: red;
+    margin-bottom: 20px;
+}
+
+table.fixed {
+    table-layout: fixed;
+    width: 700px;
+}
+
+table.fixed td {
+    overflow: auto;
+}
+
+th#link {
+    text-align: center;
+    width: 100px;    
+}
+
+td#model {
+    text-align: left;
+}
+
+td#link {
+    text-align: center;
+}
+
+table, th, td {	
+    text-align: center;
+	border: 3px red;
+	border-collapse: collapse;	
+}
+
+th {
+    font-size: large;
+    padding-bottom: 30px;
+}
+
+td {
+	padding-bottom: 15px;
+}
+
+a.sidebar-link {
+    margin-left: 20px;
+}
+
+
+h1#table-header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+div.sidenav {
+    height: 100%; 
+    width: 10%; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
+
+hr {    
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:white;
+    height: 1px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+div.container {
+    display: grid;
+    width: 700px;
+	display: grid;
+	grid-template-columns: 500px;
+	max-height: 95%;
+}
+
+div.grid-item {
+    padding: 20px;
+    text-align: center;
+}
+
+div#selector {
+    padding-top: 30px;
+    margin-right: 50px;
+}
+
+div#search {
+    margin-left: 0px;
+}
+
+div#request-pull {
+    margin-left: 0px;
+}
+
+div#header {
+	display: flex;
+}
+
+div#current-instrument {
+	
+}
+

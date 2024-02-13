@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link th:href = "@{/css/main.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div th:fragment="about" class="container">
+        <article>
+            <h1>Guitar Center Tracker</h1>
+            <br/><br/><br/>
+            <h3>About</h3>
+            <br/><br/>
+            <p>Guitar Center Tracker is used for requesting an easily viewable list of categories of instrument searches within the Guitar Center website.</p>
+            <p>Only one request per day can be made by users.</p>
+            <p>Once a request is made, a comparison is made to the previous request pull entries. Any new entry is marked as "new."</p>
+        </article>
+    </div>
+</body>

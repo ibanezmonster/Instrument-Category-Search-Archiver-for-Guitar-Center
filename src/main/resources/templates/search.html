@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link th:href = "@{/css/main.css}" rel="stylesheet">    
+</head>
+
+<body>
+    <div th:fragment="search">
+        <div class="container">
+			<h1 id="table-header">Instrument List</h1>
+	        <hr/>        
+			
+			<h4 th:text="${#request.requestURI} == '/search' 
+						? ${instrumentSelectionModel.instrumentSelection.displayName} 
+						: 'Select Instrument'">
+			</h4>
+					
+			<form class="search" th:object = "${instrumentSelectionForm}" method="post">
+	
+		        <div id="header">
+		            <div class="grid-item" id="selector">					
+		                <select name="instrumentType" id="instrumentType" th:field="*{instrumentSelection}" th:onchange="'javascript:enableSearchBtn();'">
+							<option value="default" disabled>Select Instrument</option>
+							<option th:each="instrument: ${T(com.gc.model.selection.InstrumentSelectionCategoryNames).values()}" 
+									th:value="${instrument}"
+									th:text="${instrument.displayName}"
+									th:selected="${param.instrument == instrument}">
+							</option>
+		                </select>
+		            </div>	
+		            
+					<div class="grid-item">
+						<input type="checkbox" id="newOnlyCheckbox" name="newOnlyCheckbox" style="margin-bottom: 10px" th:field="*{newOnly}"></input>
+						<span style="font-size:.7em; white-space: nowrap; padding-right: 10px; margin-bottom: 0px; margin-top:20px">New Results Only</span>						
+	        		</div>	
+	        		
+	        				            
+		            <div class="grid-item" id="search">
+		                <button id="searchBtn" class="btn btn-primary btn-block" type="submit" formaction="/search" disabled>Search</button>		
+		            </div>
+		            
+		            <div sec:authorize="hasRole('ADMIN')" class="grid-item" id="request-pull">
+		                <button class="btn btn-primary btn-block" th:onclick="requestPull()" formaction="/newpull">Request Pull</button>		                
+	            	</div>	            		            						
+	        	</div>     	        		        	
+	        </form>
+	                
+	        <hr/>
+	        
+	        <div id="instrument-list">
+	            <table class="fixed">
+	                <tr>
+	                    <th>Model</th>
+	                    <th id="link">Link</th>
+	                    <th>New?</th>
+	                </tr>
+	                
+	               	
+	                <tr th:each="instrumentName, link : *{searchResults}">
+	                    <td><span th:text="*{searchResults[__${link.index}__].model}"></span></td>
+	                    <td><a th:href="*{searchResults[__${link.index}__].link}">Link</a></td>
+	                    <td>
+							<span th:if="*{searchResults[__${link.index}__].newRelease} == true">
+								<img th:src="@{img/checkmark.jpg}"/>	
+							</span>
+							
+							<span th:unless="*{searchResults[__${link.index}__].newRelease} == true">
+								<img th:src="@{img/x.jpg}"/>	
+							</span>
+						</td>
+	                </tr>	            		            		            	
+	            </table>
+	        </div>
+	    </div>
+    </div>
+</body>

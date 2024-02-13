@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link th:href = "@{/css/main.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:fragment="sidenav" class="sidenav" style="background: repeating-linear-gradient(45deg,transparent,transparent 10px,#ccc 30px,#ccc 40px),linear-gradient(to bottom, #eee, #999 )";>
+        <h2 class="welcome-message">Welcome!</h2>
+        <h2 class="welcome-message">mode:</h2>
+        <h2 class="welcome-message" th:text="${#authentication.principal.username}"></h2>        
+        <br/><br/><br/>
+        <a th:href = "@{/home}" class="sidebar-link"><b>Home</b></a>
+        <br/><br/>
+        <a th:href = "@{/about}" class="sidebar-link"><b>About</b></a>
+        <br/><br/>
+
+        <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+			<input type="submit" value="Logout"/>
+		</form> 
+        <a class="sidebar-link" th:href="@{/logout}" id="logoutLink"><b>Logout</b></a>
+
+    </div>    
+</body>

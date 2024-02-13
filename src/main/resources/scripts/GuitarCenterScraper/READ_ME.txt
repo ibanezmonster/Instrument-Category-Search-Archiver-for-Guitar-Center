@@ -1,0 +1,1 @@
+To enable passive mode, set passive_mode=1 in runstyle.config

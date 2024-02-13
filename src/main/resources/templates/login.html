@@ -1,0 +1,62 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Guitar Center Tracker Login</title>
+	<link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+	<link th:href = "@{/css/login.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="card bg-dark text-white" id="entry-card">
+        	<div class="card-body p-5 text-center">
+			  
+			  
+				<form class="form-signin" method="post" action="/login">
+					<h1 class="form-signin-heading">Login</h1>
+					<br/>
+					<p>
+						<label for="username" class="sr-only">Access level</label>
+						<input type="text" id="username" name="username" class="form-control" placeholder="Access level" required=""
+							autofocus="">
+					</p>
+						
+					<p>*Access level: </p>
+					<p>-Enter access level as 'safe' (no quotations) if you want read-only access to previous pulls you have made. Removes option to scrape from Guitar Center Website.</p>
+					<p>-Enter access level as 'unlimited' (no quotations) if you want unlimited pulls. If you have this set, remember that you risk getting your IP blocked if you make too many pulls.</p>
+											
+					
+					<!--placeholder for password field-->
+					<!--
+					<p>
+						<label for="password" class="sr-only">Password</label>
+						<input type="password" id="password" name="password" class="form-control" placeholder="Password"
+							required="">
+					</p>
+					-->
+					
+					<p style="display:none">
+						Remember me?
+						<input type="checkbox" id="remember-me" name="remember-me" class="form-control">						
+					</p>
+					
+					<p>
+						<button class="btn btn-primary btn-lg btn-block" 
+								style="background: rgb(0, 0, 128);color:white; border-radius: 12px; margin-left: 0%; font-size: 20px; margin-right: 30px" 
+								type="submit">
+								Login
+						</button>
+						<a th:href = "@{/register}" style="display:none">Register</a>
+					</p>
+				</form>
+		
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

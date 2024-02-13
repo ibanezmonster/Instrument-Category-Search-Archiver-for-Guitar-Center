@@ -1,0 +1,37 @@
+body {
+			color: rgb(0, 128, 192);
+			height: 390px;             
+            background: url('../img/guitar.jpg') no-repeat;
+            background-attachment: fixed;
+			background-size: cover;	
+}	
+	
+h1, p {
+	color: rgb(0, 0, 128);	
+	text-align: center;
+}	
+
+input{
+	justify-content: center;			
+}
+
+div#entry-card {
+	background: repeating-linear-gradient( 
+					 	45deg,
+					    transparent,
+					    transparent 10px,
+					    #ccc 30px,
+					    #ccc 40px),
+					    
+					    linear-gradient(
+							to bottom,
+							#eee,
+							#999
+						); 
+	border-radius: 1rem; 
+	width: 25%; 
+	padding: 10px; 
+	margin:auto; 
+	border: 1px solid black;	
+}
+
