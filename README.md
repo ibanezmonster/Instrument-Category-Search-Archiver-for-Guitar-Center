@@ -14,3 +14,6 @@ Requires Java 11 and Python 3.11.4
 
 To run: in target folder, run java -jar icsagc.jar
 and open web browser to localhost:8080
+
+Demo:
+https://www.youtube.com/watch?v=z70_JCrC4_8
